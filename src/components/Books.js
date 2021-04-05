@@ -16,7 +16,8 @@ function BooksList() {
 
   return (
     <div className="App">
-      <div>{books}</div>
+      <h1>{books.title}</h1>
+      <p>{books.author}</p>
     </div>
   );
 }

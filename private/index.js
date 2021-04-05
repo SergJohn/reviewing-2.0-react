@@ -13,7 +13,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/books', (req, res) =>{
     console.log('inside end-point /books');
-    const bookSample = "The Outsider";
+    const bookSample = {
+        "title":"The Outsider",
+        "author": "Albert Camus"
+    };
     res.send(bookSample);
 })
 
