@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import api from '../services/Api';
 
 function FormAddBook() {
@@ -6,16 +6,6 @@ function FormAddBook() {
     const [title, setTitle] = useState([]);
     const [author, setAuthor] = useState([]);
     const [books, setBooks] = useState([]);
-
-
-    useEffect(() => {
-        async function loadBooks() {
-            const response = await api.get('/books');
-            console.log(response.data);
-            setBooks(response.data);
-        }
-        loadBooks();
-    }, [books]);
 
     const handleChange = e => {
         setTitle(e.target.value);
@@ -31,20 +21,22 @@ function FormAddBook() {
         "author": author
     }];
 
-    addedBook.push(books);
-
-    async function uploadBook() {
-        const response = await api.post('/add-book');
-        console.log(response.data);
-        setBooks(response.data);
-    }
-    uploadBook();
+    // setBooks(addedBook);
+    // addedBook.push(books);
 
     const handleSubmit = e => {
         e.preventDefault();
 
+        async function uploadBook() {
+            const response = await api.post('/add-book');
+            console.log(response.data);
+            setBooks(response.data);
+        }
+        uploadBook();
+
         setTitle('');
         setAuthor('');
+        
     }
 
     return (

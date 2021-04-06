@@ -8,13 +8,14 @@ function BooksList() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    async function loadBooks(){
-      const response = await api.get('/books');
-      console.log(response.data);
-      setBooks(response.data);
-    }
-    loadBooks();
-  },[books]);
+      async function loadBooks(){
+        const response = await api.get('/books');
+        console.log(response.data);
+        setBooks(response.data);
+      }
+      loadBooks();
+    
+  },[books + 1]);
 
   return (
     <div className="App">

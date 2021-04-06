@@ -30,9 +30,10 @@ app.post('/add-book', (req, res) => {
     const author = req.body.author;
     const book = [{
         "title": title,
-        "author":author
+        "author": author
     }]
     console.log('You have posted');
+    console.log(book);
     res.send(book);
 });
 
