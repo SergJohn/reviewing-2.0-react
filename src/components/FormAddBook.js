@@ -5,7 +5,6 @@ function FormAddBook() {
 
     const [title, setTitle] = useState([]);
     const [author, setAuthor] = useState([]);
-    const [books, setBooks] = useState([]);
 
     const handleChange = e => {
         setTitle(e.target.value);
@@ -16,27 +15,25 @@ function FormAddBook() {
         setAuthor(e.target.value);
     }
 
-    const addedBook = [{
-        "title": title,
-        "author": author
-    }];
-
-    // setBooks(addedBook);
-    // addedBook.push(books);
-
     const handleSubmit = e => {
         e.preventDefault();
 
         async function uploadBook() {
-            const response = await api.post('/add-book');
-            console.log(response.data);
-            setBooks(response.data);
+
+            const addedBook = {
+                "title": title,
+                "author": author
+            };
+
+            const response = await api.post('/add-book', addedBook).then(() => console.log('Sending to backend')).catch(err => {
+                console.log(err);
+            });
         }
         uploadBook();
 
         setTitle('');
         setAuthor('');
-        
+
     }
 
     return (
@@ -44,19 +41,19 @@ function FormAddBook() {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
+                    name="title"
                     placeholder="title"
                     value={title}
-                    name="text"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
+                    name="author"
                     placeholder="author"
                     value={author}
-                    name="text"
                     onChange={handleAuthorChange}
                 />
-                <button>Add Book</button>
+                <button type="submit">Add Book</button>
             </form>
         </>
     );
