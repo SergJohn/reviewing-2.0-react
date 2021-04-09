@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../services/Api';
 import FormAddBook from './FormAddBook';
 import HomePage from './Homepage';
-import FormButtons from './FormButtons';
+import FormAddReview from './FormAddReview';
 
 function BooksList() {
 
@@ -16,17 +16,43 @@ function BooksList() {
     }
     loadBooks();
 
-  }, [books + 1]);
+  }, [books.title]);
 
-  const handleSubmit = e => {}
+  const handleSubmit = e => { }
+
+  const listBooks = (
+    <ul>
+      {books.map((book) =>
+        <div className="book-card" key={book.title}>
+          <h2>
+            {book.title}
+          </h2>
+          <p>
+            {book.author}
+          </p>
+          <button>reviews</button>
+          <br/>
+          <br/>
+          <button>delete</button>
+        </div>
+      )}
+    </ul>
+  );
 
   return (
     <div className="App">
       <HomePage />
-      <FormAddBook />
-      <h1>{books.title}</h1>
-      <p>{books.author}</p>
-      <FormButtons />
+      <div className="addBookForm">
+        <FormAddBook />
+      </div>
+      <div className="addReviewForm">
+        <FormAddReview />
+      </div>
+      <h1 className="title-books-comp">Book's list</h1>
+      <div className="books-list">
+        <div>{listBooks}</div>
+      </div>
+
     </div>
   );
 }

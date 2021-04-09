@@ -11,15 +11,14 @@ import Books from './components/Books';
 function App() {
   return (
     <Router>
-       <div className="App">
-       <Switch>
+      <div className="App">
+        <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/books" component={Books} />
-       </Switch>
-      
-    </div>
+        </Switch>
+      </div>
     </Router>
-   
+
   );
 }
 

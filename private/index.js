@@ -19,8 +19,11 @@ app.get('/books', (req, res) =>{
     },{
         "title":"The libertine",
         "author": "John wilmot"
+    },{
+        "title":"Coffee Design",
+        "author": "Monika Rosa"
     }];
-    res.send(bookSample[0]);
+    res.send(bookSample);
 })
 
 app.get('/', (req, res) =>{

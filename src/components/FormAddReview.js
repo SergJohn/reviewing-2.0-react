@@ -44,7 +44,8 @@ function FormAddReview() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className="inputs"  onSubmit={handleSubmit}>
+                <h3>Add a review</h3>
                 <input
                     type="text"
                     name="bookTitle"

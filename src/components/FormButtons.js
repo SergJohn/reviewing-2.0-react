@@ -1,5 +1,5 @@
 import React from 'react';
-import FormAddReview from './FormAddReview';
+// import FormAddReview from './FormAddReview';
 
 function FormButtons() {
 
@@ -13,9 +13,9 @@ function FormButtons() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <button>see all reviews</button>
-                <button>make a review</button>
-                <FormAddReview />
+                <button>read reviews</button>
+                <button>make review</button>
+                {/* <FormAddReview /> */}
             </form>
         </>
     );

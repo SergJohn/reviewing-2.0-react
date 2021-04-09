@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  clear: both;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -9,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #184e8e;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -23,14 +24,46 @@
 
 .addBookForm {
   display: flex;
+  float: left;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 2rem;
 }
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.addReviewForm {
+  display: flex;
+  float: right;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.book-card {
+  border: #184e8e 1px solid;
+  margin: 3rem;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 2rem;
+}
+
+
 .App-link {
   color: #61dafb;
+}
+
+.books-list {
+  clear: both;
+}
+
+.title-books-comp {
+  margin-top: 6rem;
 }
 
 @keyframes App-logo-spin {

@@ -38,7 +38,8 @@ function FormAddBook() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className="inputs" onSubmit={handleSubmit}>
+            <h3>Add a new book</h3>
                 <input
                     type="text"
                     name="title"
@@ -55,6 +56,7 @@ function FormAddBook() {
                 />
                 <button type="submit">Add Book</button>
             </form>
+            
         </>
     );
 }
