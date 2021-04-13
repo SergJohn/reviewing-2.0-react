@@ -1,5 +1,4 @@
 import React from 'react';
-// import FormAddReview from './FormAddReview';
 
 function FormButtons() {
 
@@ -15,7 +14,6 @@ function FormButtons() {
             <form onSubmit={handleSubmit}>
                 <button>read reviews</button>
                 <button>make review</button>
-                {/* <FormAddReview /> */}
             </form>
         </>
     );

@@ -2,11 +2,28 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const http = require('http').Server(app);
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
+dotenv.config();
 app.use(express.static(__dirname));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+const dbURI = process.env.DB_URL;
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then((result) => console.log('connected to db'))
+        .catch((err) => console.log(err));
+
+mongoose.connection.on('error', (err) => { 
+    console.log('Mongodb Error: ', err); 
+    process.exit();
+});
+mongoose.connection.on('connected', () => { 
+    console.log('MongoDB is successfully connected');
+});
 
 let books = [];
 let reviews = [];
