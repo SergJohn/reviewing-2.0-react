@@ -24,6 +24,13 @@ router.get('/', (req, res) =>{
     res.send('<h1>test</h1>');
 })
 
+router.get('/reviews/:book', (req, res) => {
+
+    var book = req.params.book;
+    console.log(book);
+    res.render('Reviews.js', book);
+});
+
 // POST
 router.post('/add-book', (req, res) => {
     const book = {
@@ -59,5 +66,8 @@ router.post('/add-review', (req, res) => {
 // PUT
 
 // DELETE
+router.delete('/delete-book-test', (req, res) => {
+    console.log('book deleted');
+});
 
 module.exports = router;

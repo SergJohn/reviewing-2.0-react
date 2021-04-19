@@ -3,6 +3,8 @@ import api from '../services/Api';
 import FormAddBook from './FormAddBook';
 import HomePage from './Homepage';
 import FormAddReview from './FormAddReview';
+import Button from '@material-ui/core/Button';
+import deleteBook from '../functions/DeleteBook';
 
 function BooksList() {
 
@@ -18,8 +20,6 @@ function BooksList() {
 
   }, [books.title]);
 
-  const handleSubmit = e => { }
-
   const listBooks = (
     <ul>
       {books.map((book) =>
@@ -30,10 +30,14 @@ function BooksList() {
           <p>
             {book.author}
           </p>
-          <button>reviews</button>
-          <br/>
-          <br/>
-          <button>delete</button>
+          <Button href={`/reviews/:${book.title}`} variant="contained" color="primary">
+            reviews
+          </Button>
+          <br />
+          <br />
+          <Button onClick={() => { deleteBook(book.title) }} variant="contained" color="primary">
+            delete
+          </Button>
         </div>
       )}
     </ul>
