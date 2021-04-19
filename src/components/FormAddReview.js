@@ -22,7 +22,7 @@ function FormAddReview() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        async function uploadBook() {
+        async function uploadReview() {
 
             const addedReview = {
                 "bookTitle": bookTitle,
@@ -34,7 +34,7 @@ function FormAddReview() {
                 console.log(err);
             });
         }
-        uploadBook();
+        uploadReview();
 
         setBookTitle('');
         setReviewerName('');
