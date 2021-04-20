@@ -25,9 +25,9 @@ function FormAddReview() {
         async function uploadReview() {
 
             const addedReview = {
-                "bookTitle": bookTitle,
-                "reviewerName": reviewerName,
-                "reviewText": reviewText
+                "title": bookTitle,
+                "name": reviewerName,
+                "review": reviewText
             };
 
             const response = await api.post('/add-review', addedReview).then(() => console.log('Sending to backend')).catch(err => {
@@ -48,21 +48,21 @@ function FormAddReview() {
                 <h3>Add a review</h3>
                 <input
                     type="text"
-                    name="bookTitle"
+                    name="title"
                     placeholder="Which Book"
                     value={bookTitle}
                     onChange={handleChangeBookTitle}
                 />
                 <input
                     type="text"
-                    name="reviewerName"
+                    name="name"
                     placeholder="Your name"
                     value={reviewerName}
                     onChange={handleChangeReviewerName}
                 />
                 <input
                     type="text"
-                    name="reviewText"
+                    name="review"
                     placeholder="what's your opinion"
                     value={reviewText}
                     onChange={handleChangeReviewText}

@@ -22,7 +22,7 @@ function Reviews(book) {
     const listReviews = (
         <ul>
             {reviews.map((review) => review.title == nameTitle ? 
-                <div className="book-card" key={review.title}>
+                <div className="book-card" key={review.name}>
                     <h2>
                         {review.title}
                     </h2>
