@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/Api';
 import FormAddBook from './FormAddBook';
-import HomePage from './Homepage';
+import Nav from './Nav';
 import FormAddReview from './FormAddReview';
 import Button from '@material-ui/core/Button';
 import deleteBook from '../functions/DeleteBook';
@@ -45,7 +45,7 @@ function BooksList() {
 
   return (
     <div className="App">
-      <HomePage />
+      <Nav />
       <div className="addBookForm">
         <FormAddBook />
       </div>

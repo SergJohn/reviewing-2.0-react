@@ -1,18 +1,9 @@
 import React from 'react';
+import Nav from './Nav';
 
 const Homepage = () => (
     <React.Fragment>
-        <header className="App-header">
-        <p>
-          REVIEWING
-        </p>
-        <a
-          className="App-link"
-          href="/books"
-        >
-          Books
-        </a>
-      </header>
+        <Nav />
     </React.Fragment>
     
 );
