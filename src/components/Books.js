@@ -25,7 +25,7 @@ function BooksList() {
       {books.map((book) =>
         <div className="book-card" key={book.title}>
           <h2>
-            {book.title}
+            {book.title.toUpperCase()}
           </h2>
           <p>
             {book.author}
