@@ -9,6 +9,10 @@ router.get('/books', bookCtrl.getBooks);
 
 router.get('/books/:book', bookCtrl.getBook);
 
+router.get('/reviews', reviewCtrl.getReviews);
+
+router.get('/review/:title', reviewCtrl.getReview);
+
 router.get('/', (req, res) =>{
     res.send('<h1>test</h1>');
 })
@@ -19,9 +23,13 @@ router.post('/add-book', bookCtrl.createBook);
 router.post('/add-review', reviewCtrl.createReview);
 
 // PUT
+router.put('books/:title', bookCtrl.updateBook);
+
+router.put('reviews/:title', reviewCtrl.updateReview);
 
 // DELETE
 router.delete('/delete-book/:title', bookCtrl.deleteBook);
 
+router.delete('/delete-review/:title', reviewCtrl.deleteReview);
 
 module.exports = router;
