@@ -21,7 +21,7 @@ exports.getBooks = function (req, res) {
 };
 
 exports.getBook = function (req, res) {
-    Book.findOne({ title: req.params.title }, function (err, book) {
+    Book.findOne({ title: req.params.book }, function (err, book) {
         if (err) {
             res.status(400).json(err);
         }
@@ -30,7 +30,8 @@ exports.getBook = function (req, res) {
 };
 
 exports.deleteBook = function (req, res) {
-    Book.findByIdAndRemove({ title: req.params.title }, function (err, books) {
+    console.log(req.params);
+    Book.findByIdAndRemove({ _id: req.params.id }, function (err, books) {
         if (err) {
             res.status(400).json(err);
         }

@@ -9,8 +9,10 @@
   }
 }
 
+/*color for the body #184e8e*/
+
 .App-header {
-  background-color: #184e8e;
+  background-color: #212529;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
