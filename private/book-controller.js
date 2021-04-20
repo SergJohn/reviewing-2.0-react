@@ -31,7 +31,7 @@ exports.getBook = function (req, res) {
 
 exports.deleteBook = function (req, res) {
     console.log(req.params);
-    Book.findByIdAndRemove({ _id: req.params.id }, function (err, books) {
+    Book.findOneAndRemove({ title: req.params.title }, function (err, books) {
         if (err) {
             res.status(400).json(err);
         }

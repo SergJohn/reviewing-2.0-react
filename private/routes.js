@@ -21,7 +21,7 @@ router.post('/add-review', reviewCtrl.createReview);
 // PUT
 
 // DELETE
-router.delete('/delete-book/:id', bookCtrl.deleteBook);
+router.delete('/delete-book/:title', bookCtrl.deleteBook);
 
 
 module.exports = router;
