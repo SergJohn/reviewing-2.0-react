@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/Api';
+import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
 
 function FormAddBook() {
 
@@ -21,8 +23,8 @@ function FormAddBook() {
         async function uploadBook() {
 
             const addedBook = {
-                "title": title,
-                "author": author
+                "title": title.toString().trim(),
+                "author": author.toString().trim()
             };
 
             const response = await api.post('/add-book', addedBook).then(() => console.log('Sending to backend')).catch(err => {
@@ -39,24 +41,29 @@ function FormAddBook() {
     return (
         <>
             <form className="inputs" onSubmit={handleSubmit}>
-            <h3>Add a new book</h3>
-                <input
+                <h3>Add a new book</h3>
+                <Input
+                    placeholder="title"
+                    inputProps={{ 'aria-label': 'description' }}
                     type="text"
                     name="title"
-                    placeholder="title"
                     value={title}
                     onChange={handleChange}
                 />
-                <input
+
+                <Input
+                    placeholder="author"
+                    inputProps={{ 'aria-label': 'description' }}
                     type="text"
                     name="author"
-                    placeholder="author"
                     value={author}
                     onChange={handleAuthorChange}
                 />
-                <button type="submit">Add Book</button>
+                <Button type="submit" variant="contained" color="secundary">
+                    Add Book
+                </Button>
             </form>
-            
+
         </>
     );
 }

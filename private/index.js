@@ -4,6 +4,7 @@ const app = express();
 const http = require('http').Server(app);
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const PORT = process.env.PORT || "5000";
 
 dotenv.config();
 app.use(express.static(__dirname));
@@ -26,6 +27,6 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB is successfully connected');
 });
 
-var server = http.listen(5000, () => {
+var server = http.listen(PORT, () => {
     console.log('listening on ', server.address().port)
 });

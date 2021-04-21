@@ -13,10 +13,6 @@ router.get('/reviews', reviewCtrl.getReviews);
 
 router.get('/review/:title', reviewCtrl.getReview);
 
-router.get('/', (req, res) =>{
-    res.send('<h1>test</h1>');
-})
-
 // POST
 router.post('/add-book', bookCtrl.createBook);
 

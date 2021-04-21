@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import api from '../services/Api';
+import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
 
 function FormAddReview() {
 
@@ -25,9 +27,9 @@ function FormAddReview() {
         async function uploadReview() {
 
             const addedReview = {
-                "title": bookTitle,
-                "name": reviewerName,
-                "review": reviewText
+                "title": bookTitle.toString().trim().toLowerCase(),
+                "name": reviewerName.toString().trim().toLowerCase(),
+                "review": reviewText.toString().trim().toLowerCase()
             };
 
             const response = await api.post('/add-review', addedReview).then(() => console.log('Sending to backend')).catch(err => {
@@ -44,30 +46,32 @@ function FormAddReview() {
 
     return (
         <>
-            <form className="inputs"  onSubmit={handleSubmit}>
+            <form className="inputs" onSubmit={handleSubmit}>
                 <h3>Add a review</h3>
-                <input
+                <Input
+                    placeholder="Which Book"
                     type="text"
                     name="title"
-                    placeholder="Which Book"
                     value={bookTitle}
                     onChange={handleChangeBookTitle}
                 />
-                <input
+                <Input
+                    placeholder="Your name"
                     type="text"
                     name="name"
-                    placeholder="Your name"
                     value={reviewerName}
                     onChange={handleChangeReviewerName}
                 />
-                <input
+                <Input
+                    placeholder="Tell us"
                     type="text"
                     name="review"
-                    placeholder="what's your opinion"
                     value={reviewText}
                     onChange={handleChangeReviewText}
                 />
-                <button type="submit">Add Review</button>
+                <Button type="submit" variant="contained" color="secundary">
+                    Add Review
+                </Button>
             </form>
         </>
     );
