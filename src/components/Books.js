@@ -4,7 +4,6 @@ import FormAddBook from './FormAddBook';
 import Nav from './Nav';
 import FormAddReview from './FormAddReview';
 import Button from '@material-ui/core/Button';
-import deleteBook from '../functions/DeleteBook';
 
 function BooksList() {
 
@@ -13,12 +12,16 @@ function BooksList() {
   useEffect(() => {
     async function loadBooks() {
       const response = await api.get('/books');
-      console.log(response.data);
       setBooks(response.data);
     }
     loadBooks();
 
-  }, [books.title]);
+  });
+
+  async function removeBook(title) {
+    const res = await api.delete(`/delete-book/${title}`);
+    console.log(res);
+  }
 
   const listBooks = (
     <ul>
@@ -35,7 +38,7 @@ function BooksList() {
           </Button>
           <br />
           <br />
-          <Button onClick={() => { deleteBook(book.title) }} variant="contained" color="primary">
+          <Button onClick={() => { removeBook(book.title) }} variant="contained" color="primary">
             delete
           </Button>
         </div>
