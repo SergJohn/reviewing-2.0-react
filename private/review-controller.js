@@ -45,7 +45,7 @@ exports.updateReview = function(req, res) {
 //Deleting a review
 exports.deleteReview = function (req, res) {
     console.log(req.params);
-    Review.findOneAndRemove({ title: req.params.title }, function (err, review) {
+    Review.findOneAndRemove({ review: req.params.review }, function (err, review) {
         if (err) {
             res.status(400).json(err);
         }

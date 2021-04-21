@@ -30,6 +30,6 @@ router.put('reviews/:title', reviewCtrl.updateReview);
 // DELETE
 router.delete('/delete-book/:title', bookCtrl.deleteBook);
 
-router.delete('/delete-review/:title', reviewCtrl.deleteReview);
+router.delete('/delete-review/:review', reviewCtrl.deleteReview);
 
 module.exports = router;

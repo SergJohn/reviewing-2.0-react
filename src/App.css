@@ -38,6 +38,10 @@
   flex-direction: column;
 }
 
+.citation {
+  font-size: 2rem;
+}
+
 .addReviewForm {
   display: flex;
   float: right;
