@@ -45,7 +45,7 @@ function FormAddReview() {
     }
 
     return (
-        <>
+        <React.Fragment>
             <form className="inputs" onSubmit={handleSubmit}>
                 <h3>Add a review</h3>
                 <Input
@@ -73,7 +73,7 @@ function FormAddReview() {
                     Add Review
                 </Button>
             </form>
-        </>
+        </React.Fragment>
     );
 }
 

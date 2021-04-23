@@ -49,14 +49,14 @@ function Reviews(book) {
     );
 
     return (
-        <>
+        <React.Fragment>
             <Nav />
             <h1>Reviews of the book: {nameTitle} </h1>
             <div className="books-list">
                 <div>{listReviews}</div>
             </div>
             
-        </>
+        </React.Fragment>
     );
 }
 

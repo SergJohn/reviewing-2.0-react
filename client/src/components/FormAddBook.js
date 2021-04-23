@@ -39,7 +39,7 @@ function FormAddBook() {
     }
 
     return (
-        <>
+        <React.Fragment>
             <form className="inputs" onSubmit={handleSubmit}>
                 <h3>Add a new book</h3>
                 <Input
@@ -63,7 +63,7 @@ function FormAddBook() {
                     Add Book
                 </Button>
             </form>
-        </>
+        </React.Fragment>
     );
 }
 

@@ -8,12 +8,12 @@ function FormButtons() {
     }
 
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={handleSubmit}>
                 <button>read reviews</button>
                 <button>make review</button>
             </form>
-        </>
+        </React.Fragment>
     );
 }
 
