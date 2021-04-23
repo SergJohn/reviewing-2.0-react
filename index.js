@@ -8,10 +8,9 @@ const path = require('path');
 const PORT = process.env.PORT || "5000";
 
 dotenv.config();
-app.use(express.static(__dirname));
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(require('./routes'));
 
 const dbURI = process.env.DB_URL;
