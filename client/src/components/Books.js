@@ -83,7 +83,7 @@ function BooksList() {
             </div>
           </Grid>
         </Grid>
-
+        {/* adding footer */}
         <Footer />
 
       </div>
