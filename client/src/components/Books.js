@@ -49,7 +49,7 @@ function BooksList() {
   );
 
   return (
-    <>
+    <React.Fragment>
       <div className="App">
         <Nav />
         <Grid container spacing={1}>
@@ -86,7 +86,7 @@ function BooksList() {
         <Footer />
 
       </div>
-    </>
+    </ React.Fragment>
   );
 }
 
