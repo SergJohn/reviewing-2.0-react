@@ -26,7 +26,6 @@ const Footer = () => (
             </div>
             <p> mariorosa©2021</p>
         </div>
-
     </React.Fragment>
 
 );

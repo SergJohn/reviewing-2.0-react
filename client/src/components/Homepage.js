@@ -11,7 +11,6 @@ const Homepage = () => (
         <p className="slogan">Add a book, find a new book to read, check reviews of others about your favorite one, leave your mark</p>
         <Footer />
     </React.Fragment>
-    
 );
 
 export default Homepage;

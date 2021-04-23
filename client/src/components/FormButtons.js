@@ -5,8 +5,6 @@ function FormButtons() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        
-
     }
 
     return (
