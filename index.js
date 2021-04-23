@@ -27,18 +27,18 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB is successfully connected');
 });
 
-const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://safe-meadow-23949.herokuapp.com/']
-const corsOptions = {
-  origin:  (origin, callback)  =>  {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+// const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://safe-meadow-23949.herokuapp.com/']
+// const corsOptions = {
+//   origin:  (origin, callback)  =>  {
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
