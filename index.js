@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
-const PORT = process.env.PORT || "5000";
+const PORT = process.env.PORT || "6000";
 
 dotenv.config();
 app.use(cors());
