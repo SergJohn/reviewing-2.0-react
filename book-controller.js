@@ -18,7 +18,7 @@ exports.getBooks = function (req, res) {
         if (err) {
             res.status(400).json(err);
         }
-        res.json(books);
+        res.send(books);
     });
 };
 
