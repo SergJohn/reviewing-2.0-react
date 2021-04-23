@@ -1,1 +1,1 @@
-web: node index.js && cd client && yarn start 
+web: "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
