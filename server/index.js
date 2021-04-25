@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
-const PORT = process.env.PORT || "5000";
+const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 app.use(cors());
@@ -28,13 +28,13 @@ mongoose.connection.on('connected', () => {
 });
 
 if (process.env.NODE_ENV === 'production') {
-    // Serve any static files
-    app.use(express.static(path.join(__dirname, 'client/build')));
+      // Priority serve any static files.
+  app.use(express.static(path.resolve(__dirname, '../client/build')));
       
-    // Handle React routing, return all requests to React app
-    app.get('*', function(req, res) {
-      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-    });
+      // All remaining requests return the React app, so it can handle routing.
+  app.get('*', function (request, response) {
+    response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  });
   }
 
 var server = http.listen(PORT, () => {

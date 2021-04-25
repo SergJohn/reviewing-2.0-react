@@ -4,14 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js",
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "client": "cd client && yarn start",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "start": "node server",
+    "build": "cd client/ && npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "mrosa",
   "license": "ISC",
   "dependencies": {
     "bad-words": "^3.0.4",
