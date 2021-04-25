@@ -11,7 +11,7 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-app.use(require('./routes'));
+app.use(require('../routes'));
 
 const dbURI = process.env.DB_URL;
 
