@@ -15,12 +15,8 @@ const Nav = () => (
 
       </div>
       <Link to="/books">
-        <a
-          className="App-link"
-          href="/books"
-        >
+        
           Books
-        </a>
       </Link>
 
     </header>
