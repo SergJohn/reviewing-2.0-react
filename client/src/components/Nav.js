@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 
 const Nav = () => (
@@ -13,13 +14,15 @@ const Nav = () => (
         </a>
 
       </div>
-
-      <a
-        className="App-link"
-        href="/books"
-      >
-        Books
+      <Link to="/books">
+        <a
+          className="App-link"
+          href="/books"
+        >
+          Books
         </a>
+      </Link>
+
     </header>
   </React.Fragment>
 
