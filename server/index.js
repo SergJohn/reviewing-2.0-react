@@ -27,6 +27,7 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB is successfully connected');
 });
 
+// Connection
 if (process.env.NODE_ENV === 'production') {
       // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../client/build')));
