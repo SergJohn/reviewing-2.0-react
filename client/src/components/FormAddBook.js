@@ -59,7 +59,7 @@ function FormAddBook() {
                     value={author}
                     onChange={handleAuthorChange}
                 />
-                <Button type="submit" variant="contained" color="secundary">
+                <Button type="submit" variant="contained" color="default">
                     Add Book
                 </Button>
             </form>

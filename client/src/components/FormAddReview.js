@@ -69,7 +69,7 @@ function FormAddReview() {
                     value={reviewText}
                     onChange={handleChangeReviewText}
                 />
-                <Button type="submit" variant="contained" color="secundary">
+                <Button type="submit" variant="contained" color="default">
                     Add Review
                 </Button>
             </form>
