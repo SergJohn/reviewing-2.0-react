@@ -3,12 +3,19 @@
 ## Used Technologies
 
 ReactJS
+
 MaterialUI
+
 NodeJS
+
 Express
+
 MongoDB
+
 MongoDB Atlas
+
 Heroku
+
 
 # Getting Started with Create React App
 
