@@ -46,6 +46,7 @@ function FormAddBook() {
                     placeholder="title"
                     inputProps={{ 'aria-label': 'description' }}
                     type="text"
+                    required
                     name="title"
                     value={title}
                     onChange={handleChange}
@@ -55,6 +56,7 @@ function FormAddBook() {
                     placeholder="author"
                     inputProps={{ 'aria-label': 'description' }}
                     type="text"
+                    required
                     name="author"
                     value={author}
                     onChange={handleAuthorChange}

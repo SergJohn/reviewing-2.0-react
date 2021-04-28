@@ -51,6 +51,7 @@ function FormAddReview() {
                 <Input
                     placeholder="Which Book"
                     type="text"
+                    required
                     name="title"
                     value={bookTitle}
                     onChange={handleChangeBookTitle}
@@ -58,6 +59,7 @@ function FormAddReview() {
                 <Input
                     placeholder="Your name"
                     type="text"
+                    required
                     name="name"
                     value={reviewerName}
                     onChange={handleChangeReviewerName}
@@ -65,6 +67,7 @@ function FormAddReview() {
                 <Input
                     placeholder="Tell us"
                     type="text"
+                    required
                     name="review"
                     value={reviewText}
                     onChange={handleChangeReviewText}

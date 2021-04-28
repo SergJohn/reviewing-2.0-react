@@ -28,12 +28,12 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB is successfully connected');
 });
 
-// Connection with react
+// CONNECTION WITH REACT
 if (process.env.NODE_ENV === 'production') {
-    // Priority serve any static files.
+    // PRIORITY SERVE ANY STATIC FILES.
     app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-    // All remaining requests return the React, so it can handle routing.
+    // ALL REMAINING REQUESTS RETURN TO THE REACT, SO IT CAN HANDLE ROUTING.
     app.get('*', function (request, response) {
         response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });

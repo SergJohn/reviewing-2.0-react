@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://dry-mesa-64187.herokuapp.com/'
+    baseURL: 'https://dry-mesa-64187.herokuapp.com/' || 'http://localhost:5000'
     
 })
 

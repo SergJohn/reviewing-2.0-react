@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../services/Api';
 import Nav from './Nav';
 import Button from '@material-ui/core/Button';
@@ -52,10 +53,17 @@ function Reviews(book) {
         <React.Fragment>
             <Nav />
             <h1>Reviews of the book: {nameTitle} </h1>
+            <Button variant="contained" color="primary">
+                <Link to="/books" className="App-link">
+
+                    Back to books
+                </Link>
+            </Button>
+
             <div className="books-list">
                 <div>{listReviews}</div>
             </div>
-            
+
         </React.Fragment>
     );
 }
