@@ -1,6 +1,6 @@
 # College Project to Interactive Web Applications Subject
 
-# Used Technologies
+## Used Technologies
 
 ReactJS
 MaterialUI
