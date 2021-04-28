@@ -1,4 +1,14 @@
-# IN PROGRESS - NOT FINISHED YET
+# College Project to Interactive Web Applications Subject
+
+# Used Technologies
+
+ReactJS
+MaterialUI
+NodeJS
+Express
+MongoDB
+MongoDB Atlas
+Heroku
 
 # Getting Started with Create React App
 
